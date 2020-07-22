@@ -29,7 +29,13 @@ const Form = props => {
               placeholder="First Name"
               value={values.firstname}
               maxLength="20"
-            ></input>
+                    ></input>
+                    {/*
+                    Controlled input
+                    when someone types in the input, it triggers the onchange function, the function updates Values by update().
+                    The values with new info will feed in the value={values.firstname}
+                    Without the onchange callback, the input's value will be empty becasue the initial vaules is an empty formValues obj.
+                    */}
             <input
               htmlFor="lnameInput"
               id="lnameInput"
