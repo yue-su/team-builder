@@ -39,7 +39,6 @@ function App() {
   */
   const [friends, setFriends] = useState([])
   const [formValues, setFormValues] = useState(initialFormValues)
-
   /*
   update is a callback function that will be used by the Form component as a prop in changeHandler.
   A new updatedFormValues is set to hold the value return from Form, which is a new friend item created by the user input data
@@ -69,10 +68,22 @@ function App() {
     setFormValues(initialFormValues)
   }
 
+  /*
+  This function is to update the friends state with a inner varable so it will remove the member
+  */
+  const memberToEdit = (friend) => {
+    setFormValues(friend)
+    let toBeEditFriend = [...friends]
+    for (let i = 0; i < toBeEditFriend.length; i++) {
+      if (toBeEditFriend[i].id === friend.id)
+        toBeEditFriend.splice(i, 1)
+    }
+    setFriends(toBeEditFriend)
+  }
   //here useEffect is to mimic the process when the page renders the first time and gets info from database
   useEffect(() => {
     setFriends(friendList)
-  },[])
+  }, [])
 
   return (
     <div className="App">
@@ -85,7 +96,7 @@ function App() {
         submit={submit} />
       {
         friends.map(item => {
-          return <FriendCard key={item.id} friend={item} />
+          return <FriendCard key={item.id} friend={item} memberToEdit={memberToEdit} />
         })
       }
       

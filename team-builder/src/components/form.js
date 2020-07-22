@@ -3,7 +3,7 @@ import React from 'react';
 const Form = props => {
 
 
-    const { values, update, submit } = props
+    const { values, update, submit, } = props
     
     const changeHandler = event => {
         const name = event.target.name
@@ -60,6 +60,8 @@ const Form = props => {
                 </lable>
                 <br></br>
           <button>Submit</button>
+          <br />
+          
         </form>
       </div>
     )
