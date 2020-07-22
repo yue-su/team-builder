@@ -15,6 +15,7 @@ h1{
   color: #00473e;
   font-size: 300%;
   margin: 3rem;
+  text-transform: uppercase;
 }
 
 `
