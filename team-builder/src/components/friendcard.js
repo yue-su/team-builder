@@ -1,4 +1,6 @@
 import React from 'react'
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Button, } from 'react-bulma-components';
 
 const FriendCard = props => {
 
@@ -13,7 +15,7 @@ const FriendCard = props => {
         <div>
             <h2>{friend.firstname} {friend.lastname}</h2>
             <p>{friend.yearofborn}</p>
-            <button onClick={editHandler}>Edit</button>
+            <Button onClick={editHandler}>Edit</Button>
         </div>
     )
 }

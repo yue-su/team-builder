@@ -1,4 +1,6 @@
 import React from 'react';
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Button, } from 'react-bulma-components';
 
 const Form = props => {
 
@@ -59,7 +61,7 @@ const Form = props => {
             ></input>
                 </lable>
                 <br></br>
-          <button>Submit</button>
+          <Button>Submit</Button>
           <br />
           
         </form>

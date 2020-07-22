@@ -3,6 +3,21 @@ import { v4 as uuid } from 'uuid'
 import './App.css';
 import FriendCard from './components/friendcard'
 import Form from './components/form'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+background-color:#f2f7f5;
+height: 100vh;
+padding: 3rem;
+color: #475d5b;
+
+h1{
+  color: #00473e;
+  font-size: 300%;
+  margin: 3rem;
+}
+
+`
 
 /*
 friendlist here is to simulate a data set retrived from an API or database. In this case, it is an array of obj.
@@ -86,7 +101,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <h1>Team Build</h1>
 
       {/*still not quite clear about passing formValues as a props in Form*/}
@@ -100,7 +115,7 @@ function App() {
         })
       }
       
-    </div>
+    </StyledApp>
   );
 }
 
